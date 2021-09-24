@@ -1,61 +1,98 @@
-***
-***
 Git Commands
-***
-***
+============
 
-# Globals
+Let's document some git commands in markdown!
 
-## Set global variables
-> git config --global user.name "Phil Kaufman"<br />
-> git config --global user.email "pkaufman9966@gmail.com"
+Motivation
+----------
 
-## list global variables
-> git config --list
+It's always nice to kill two birds with one stone.  Learn git, learn md.
 
-# Init local repo
-> git init
+Installation
+------------
 
-# Clone
-> git clone https://github.com/pkaufman9966/HelloWorld.git
+Nothing to install
 
-# Working tree
+The GIT Language and Commands
+--------
 
-## undo working tree file with version from staging area
-> git checkout -- {file name}
+### Globals
 
-# Staging area
+#### Set global variables
+```
+$ git config --global user.name "Phil Kaufman"
+$ git config --global user.email "pkaufman9966@gmail.com"
+```
 
-## add files to staging (index) area
-> git add README.md<br />
-> git add "Git Commands.md"<br />
-> get add .
+#### list global variables
+```
+$ git config --list
+```
 
-## diff working tree diff vs staging (index) area
-> git diff
+### Init - local repo
+```
+$ git init
+```
 
-## undo staged file change with version from commit
-> git reset HEAD {filename}
+### Clone
+```
+$ git clone https://github.com/pkaufman9966/HelloWorld.git
+```
 
-## restore file from earlier commit (into staging AND working tree)
-> git checkout {commithash} -- {filename}
+### WORKING TREE
 
-# Commits
+#### undo working tree file with version from staging area
+```
+$ git checkout -- {file name}
+```
 
-## status
-> git status
+### STAGING (INDEX) AREA
 
-## Commiting
-> git commit -m "Add readme and git commands files"<br />
-> git commit
+#### add files to staging (index) area
+```
+$ git add README.md
+$ git add "Git Commands.md"
+$ get add .
+```
 
-## commit graph
-> git log<br />
-> git log -p<br />
-> git log -- {filename}
+#### diff working tree diff vs staging (index) area
+```
+$ git diff
+```
 
-## diff staging (index) area vs history
-> git diff --staged
+#### undo staged file change with version from commit
+```
+$ git reset HEAD {filename}
+```
 
-# Branch
+#### restore file from earlier commit (into staging AND working tree)
+```
+$ git checkout {commithash} -- {filename}
+```
+### HISTORY / COMMITS
+
+#### status
+```
+$ git status
+```
+
+#### Commiting
+```
+$ git commit -m "Add readme and git commands files"
+$ git commit
+```
+
+#### commit graph
+```
+$ git log
+$ git log -p
+$ git log -- {filename}
+```
+
+#### diff staging (index) area vs history
+```
+$ git diff --staged
+```
+
+### Branch
 

@@ -115,7 +115,7 @@ $ git diff --staged
 ### Branch
 A `branch` is pointer to a SHA1 hash or commit.<br/>
 Git creates a default branch called `master` when a repo is created.
-The branch pointer will advance with every commit.
+The current (`HEAD`) branch pointer will advance with every commit.
 
 #### Show branches
 ```
@@ -138,9 +138,14 @@ $ git branch -d <branch name>
 `HEAD` is a pointer (symbolic pointer) that points to a `branch`.<br/>
 `HEAD` tells us what we have checked out.
 
-#### Move pointer to a different branch
+#### Move `HEAD` pointer to a different branch
 ```
 $ git checkout <branch name>
+```
+
+#### create and move `HEAD` pointer to a different branch
+```
+$ git checkout -b <branch name>
 ```
 
 ### Merge
@@ -162,3 +167,30 @@ A new commit is created on with merged files.
 ```
 git merge <branch1>
 ```
+
+### Stash
+
+Stash is like a snapshot of the current `working directory` and `staging area` that we can get back aty a later time.
+
+#### see existing stashes
+```
+$ git stash list
+```
+#### Stash current changes
+```
+$ git stash save "<message">
+```
+#### Review changes in stash
+```
+$ git stash -p
+```
+#### Restore current stash over current state
+```
+$ git stash -apply
+```
+
+### Remotes
+
+Remote is any non-local repository.
+
+

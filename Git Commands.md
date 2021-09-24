@@ -3,6 +3,12 @@ Git Commands
 
 Let's document some git commands in markdown!
 
+Readme
+------
+
+Please read this repository's readme file at:  `~/README.md`
+
+
 Motivation
 ----------
 
@@ -13,6 +19,11 @@ Installation
 
 Nothing to install
 
+Use
+---
+
+Choose your favourite linux prompt like `bash` or `bourne`, or IDE tools like `VS Code` has embedded terminals, and enter git commands followed by pressing enter.
+
 The GIT Language and Commands
 --------
 
@@ -20,8 +31,8 @@ The GIT Language and Commands
 
 #### Set global variables
 ```
-$ git config --global user.name "Phil Kaufman"
-$ git config --global user.email "pkaufman9966@gmail.com"
+$ git config --global user.name "<first name> <last name>"
+$ git config --global user.email "email@address.com"
 ```
 
 #### list global variables
@@ -43,7 +54,7 @@ $ git clone https://github.com/pkaufman9966/HelloWorld.git
 
 #### undo working tree file with version from staging area
 ```
-$ git checkout -- {file name}
+$ git checkout -- <file name>
 ```
 
 ### STAGING (INDEX) AREA
@@ -62,12 +73,12 @@ $ git diff
 
 #### undo staged file change with version from commit
 ```
-$ git reset HEAD {filename}
+$ git reset HEAD <filename>
 ```
 
 #### restore file from earlier commit (into staging AND working tree)
 ```
-$ git checkout {commithash} -- {filename}
+$ git checkout <commithash> -- <filename>
 ```
 ### HISTORY / COMMITS
 
@@ -82,11 +93,18 @@ $ git commit -m "Add readme and git commands files"
 $ git commit
 ```
 
+#### Stage and Commiting
+```
+$ git commit -a -m "Add readme and git commands files"
+```
+
+
 #### commit graph
 ```
 $ git log
 $ git log -p
-$ git log -- {filename}
+$ git log -- <filename>
+$ git log --all --decorate --oneline --graph
 ```
 
 #### diff staging (index) area vs history
@@ -95,4 +113,52 @@ $ git diff --staged
 ```
 
 ### Branch
+A `branch` is pointer to a SHA1 hash or commit.<br/>
+Git creates a default branch called `master` when a repo is created.
+The branch pointer will advance with every commit.
 
+#### Show branches
+```
+$ git branch
+```
+#### Show merged branches
+```
+$ git branch -- merged
+```
+#### Create new branch
+```
+$ git branch <branch name>
+```
+#### Delete new branch
+```
+$ git branch -d <branch name>
+```
+
+### Head
+`HEAD` is a pointer (symbolic pointer) that points to a `branch`.<br/>
+`HEAD` tells us what we have checked out.
+
+#### Move pointer to a different branch
+```
+$ git checkout <branch name>
+```
+
+### Merge
+
+#### see differences between two branches
+
+```
+$ git diff <branch1>..<branch2>
+```
+#### Fast Forward Merge
+
+This happens when clear path from `master` to branch1.  No commit is created, branch1 pointer now points to a `master`.
+
+#### 3-Way Merge / Merge Commit
+
+This happens when there is no clear path from branch1 to `master`.<br/>
+A new commit is created on with merged files.
+
+```
+git merge <branch1>
+```

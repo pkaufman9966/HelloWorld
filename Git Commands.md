@@ -193,4 +193,13 @@ $ git stash -apply
 
 Remote is any non-local repository.
 
+#### Remote status
+```
+$ git remote -v
+```
+#### Adding a remote to local repo
+```
+$ git remote add origin <repo url>
+```
+
 

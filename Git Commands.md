@@ -191,7 +191,7 @@ $ git stash -apply
 
 ### Remotes
 
-Remote is any non-local repository.
+Remote is any non-local repository.  [Clone](#clone) adds `origin` (shortname or alias) remote repo by default.
 
 #### Remote status
 ```
@@ -199,7 +199,21 @@ $ git remote -v
 ```
 #### Adding a remote to local repo
 ```
-$ git remote add origin <repo url>
+$ git remote add <remote_ptr> <repo url>
 ```
-
-
+#### Fetch status from remote
+```
+$ git fetch <remote_ptr>
+```
+#### Merge remote changes
+```
+$ git merge <remote_ptr>/<branch>
+```
+#### Pull combines fetch and merge
+```
+$ git pull <remote_ptr>/<branch>
+```
+#### Push applies local changes to remote
+```
+$ git push <remote_ptr> <branch>
+```

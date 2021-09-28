@@ -121,6 +121,10 @@ The current (`HEAD`) branch pointer will advance with every commit.
 ```
 $ git branch
 ```
+#### Show branches *AND* remotes
+```
+$ git branch -a
+```
 #### Show merged branches
 ```
 $ git branch -- merged
